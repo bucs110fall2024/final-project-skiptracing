@@ -6,3 +6,4 @@ save functionality
 buttons 
 characters 
 scrolling background
+game over screen 
