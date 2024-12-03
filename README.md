@@ -1,12 +1,11 @@
 Team Members: Individual 
-Project Description: Storytelling choose your own adventure! Based on the choice tree, the game outputs your personality type. Reminiscent of Detroit Become Human, and Life is Strange. 
-Program Design - Features:
+
+Project Description: Coffee brewing simulator! 
+
+Program Design Features:
 start menu
-save functionality 
 buttons 
 characters 
 scrolling background
 game over screen 
-
-(CLASSES????)
 
