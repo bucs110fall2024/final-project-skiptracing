@@ -10,7 +10,9 @@ class CoffeeGame:
         self.SCREEN_WIDTH, self.SCREEN_HEIGHT = 800, 600
         self.BG_COLOR = (255, 255, 255)
         self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
-        pygame.display.set_caption("Coffee Making Simulator")
+        pygame.display.set_caption("Coffee Making Simulator!~")
+        icon = pygame.image.load('assets/coffee.png') # Load image 
+        pygame.display.set_icon(icon) # Set display icon 
         self.clock = pygame.time.Clock()
         self.bg_image = pygame.image.load('assets/background.png')
         self.coffee_cup = pygame.image.load('assets/coffee_cup.png')
