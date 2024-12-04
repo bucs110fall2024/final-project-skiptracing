@@ -50,45 +50,6 @@ See assets/gui.jpg
 
 ## ATP 
 
-1. Obstacles 
-description: 
-verify obstacle generation and movement 
-
-steps: 
-1. start the game 
-2. verify that obstacles (flies and snails) are generated at random intervals. 
-3. verify that obstacles move from right to left across screen. 
-4. verify that obstacles are removed when they move off-screen. 
-
-expected outcome: 
-obstacles are generated, move correctly, and are removed when off-screen. 
-
-2. Player Movement 
-
-description: 
-verify the player's jump works as expected. 
-
-steps: 
-1. start the game 
-2. press space to make the player jump 
-3. verify the player jumps. 
-4. let the player fall. 
-5. verify the player falls due to gravity. 
-
-expected outcome: 
-the player responds to gravity and jumps correctly when the space key is pressed. 
-
-<!-- 4. Collision Detection 
-description: 
-verify collision detection between the player and obstacles. 
-
-steps: 
-1. start the game. 
-2. allow the player to collide with an obstacle. 
-3. verify the game ends upon collision. 
-
-expected outcome: collisions are detected correctly, ending the game.  -->
-
 <!-- 5. Score Display 
 description: 
 verify score calculation and display. 
@@ -120,3 +81,4 @@ The game over screen displays correctly with the final score and restart option.
 | --- | --- | --- | 
 | 1. **Obstacles**: Verify obstacle generation and movement. | Start. the game. Verify that obstacles (flies and snails) are generated at random intervals. Verify that obstacles move from right to left across screen. Verify that obstacles are removed when they move off-screen.  | Obstacles are generated, move correctly, and are removed when off-screen. | 
 | 2. **Player Movement**: Verify the player's jump works as expected. | Start the game. Press space to make the player jump. Verify the player jumps. Let the player fall. Verify the player falls due to gravity. | The player responds to gravity and jumps correctly when the space key is pressed. | 
+| 3. **Collision Detection**: Verify collision detection between the player and obstacles. | Start the game. Allow the player to collide with an obstacle. Verify the game ends upon collision. |Collisions are detected correctly, ending the game.  | 
