@@ -3,7 +3,8 @@ import random
 
 class Customer: 
     def __init__(self, x, y): 
-        self.x, self.y = x, y 
+        self.x = x 
+        self.y = y 
         self.order = random.choice(["coffee_milk", "coffee_sugar", "coffee_milk_sugar"])
         self.image = pygame.image.load('assets/customer.png')
         

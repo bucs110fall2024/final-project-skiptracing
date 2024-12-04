@@ -1,12 +1,12 @@
 import pygame
 
 class Button:
-    def __init__(self, text, pos, font, bg="black", feedback=""):
+    def __init__(self, text, pos, font, bg="white", feedback=""):
         self.x, self.y = pos
         self.font = pygame.font.Font(None, font)
         self.change_text(text, bg)
 
-    def change_text(self, text, bg="black"):
+    def change_text(self, text, bg="white"):
         self.text = self.font.render(text, True, pygame.Color("white"))
         self.size = self.text.get_size()
         self.surface = pygame.Surface(self.size)
