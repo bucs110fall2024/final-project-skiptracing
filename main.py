@@ -1,5 +1,6 @@
 import pygame 
 import sys 
+from random import randint
 
 def display_score():
     current_time = int(pygame.time.get_ticks()/1000) - start_time # time in ms - start time so time doesn't go forever 
@@ -8,6 +9,15 @@ def display_score():
     screen.blit(score_surface, score_rect)
     return current_time 
     
+def obstacle_movement(obstacle_list):
+    if obstacle_list: 
+        for obstacle_rect in obstacle_list: 
+            obstacle_rect.x -= 5 
+            
+            screen.blit(snail_surface, obstacle_rect) 
+        return obstacle_list
+    else: return []
+            
 # Initialize pygame and variables 
 pygame.init()
 screenWidth = 800 
@@ -28,9 +38,11 @@ ground_surface = pygame.image.load('assets/ground.png').convert()
 # text_surface = test_font.render('My game', False, 'Black').convert() # can change to rgb tuple :) 
 # text_rect = text_surface.get_rect(center = (400, 50))
 
-
+# Obstacles 
 snail_surface = pygame.image.load('assets/Snail/snail1.png').convert_alpha()
 snail_rect = snail_surface.get_rect(midbottom = (700, 300))
+
+obstacle_rect_list = []
 
 player_surface = pygame.image.load('assets/Player/player_walk_1.png').convert_alpha()
 player_rect = player_surface.get_rect(midbottom = (80, 300)) # like a surface, but makes placing much easier can be mid or topo left etc. 
@@ -47,7 +59,7 @@ game_message_rect = game_message.get_rect(center = (400, 340))
 
 # Timer 
 obstacle_timer = pygame.USEREVENT + 1 
-pygame.time.set_timer(obstacle_timer, 900)
+pygame.time.set_timer(obstacle_timer, 1000)
 
 
 while True: 
@@ -79,7 +91,7 @@ while True:
                 start_time = int(pygame.time.get_ticks()/1000)
                 
         if event.type == obstacle_timer and game_active: 
-            print('test')
+            obstacle_rect_list.append(snail_surface.get_rect(midbottom = (randint(900,1100), 300)))
             
 
     if game_active == True: 
@@ -92,11 +104,11 @@ while True:
         score = display_score()
         
 
-        # Snail Movement 
-        snail_rect.x -= 4 # move surf that contains rect 
-        if snail_rect.right <= 0: 
-            snail_rect.left = 800 
-        screen.blit(snail_surface, snail_rect)
+        # # Snail Movement 
+        # snail_rect.x -= 4 # move surf that contains rect 
+        # if snail_rect.right <= 0: 
+        #     snail_rect.left = 800 
+        # screen.blit(snail_surface, snail_rect)
 
         # Player Movement 
         player_gravity += 1
@@ -104,6 +116,9 @@ while True:
         if player_rect.bottom >= 300: # top of ground, bottom fo player 
             player_rect.bottom = 300 
         screen.blit(player_surface, player_rect) # placing at rect 
+        
+        # OBbstacle movemnt 
+        obstacle_rect_list = obstacle_movement(obstacle_rect_list)
         
         # Collision End 
         if snail_rect.colliderect(player_rect):
