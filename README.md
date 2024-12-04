@@ -35,13 +35,13 @@ Methods:
 
 ### Obstacle Class 
 Attributes: 
-`frames`: List of images used for obstacle's animation.
-`animation_index`: Index to track the current frame in the animation. 
-`image`: Current image of the obstacle to be displayed. 
-`rect`: Rect object defining the obstacle's position and size. 
+- `frames`: List of images used for obstacle's animation.
+- `animation_index`: Index to track the current frame in the animation. 
+- `image`: Current image of the obstacle to be displayed. 
+- `rect`: Rect object defining the obstacle's position and size. 
 
 Methods: 
-`__init__(self, type)`: Initialies the obstacle object, loading images based on the obstacle type (fly or snail). 
-`animation_state(self)`: Updates the obstacle's animation state by cycling through frames. 
-`update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
-`destroy(self)`: Destroys the obstacle if it moves off-screen. 
+- `__init__(self, type)`: Initialies the obstacle object, loading images based on the obstacle type (fly or snail). 
+- `animation_state(self)`: Updates the obstacle's animation state by cycling through frames. 
+- `update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
+- `destroy(self)`: Destroys the obstacle if it moves off-screen. 
