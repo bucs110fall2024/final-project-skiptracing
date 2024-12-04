@@ -18,7 +18,7 @@ def main():
     # Initializations 
     pygame.init()
     screen = pygame.display.set_mode((800, 400))
-    pygame.display.set_caption('Pixel Runner')
+    pygame.display.set_caption('Skiptracing')
     icon = pygame.image.load('assets/Player/player_stand.png')
     pygame.display.set_icon(icon)
     clock = pygame.time.Clock() # Clock object for FPS
@@ -40,7 +40,7 @@ def main():
     player_stand = pygame.image.load('assets/Player/player_stand.png').convert_alpha()
     player_stand = pygame.transform.rotozoom(player_stand, 0, 2)
     player_stand_rect = player_stand.get_rect(center = (400, 200))
-    game_name = test_font.render('Pixel Runnner', False, (111, 196, 169))
+    game_name = test_font.render('Skiptracing', False, (111, 196, 169))
     game_name_rect = game_name.get_rect(center = (400, 80))
     game_message = test_font.render('Press space to run', False, (111, 196, 169))
     game_message_rect = game_message.get_rect(center = (400, 340))

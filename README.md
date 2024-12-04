@@ -1,13 +1,13 @@
-# Pixel Runners
+# Skiptracing
 
 ## CS110 Final Project Fall 2024 
 
 ## Team Members: 
 Sofie Caballes 
-***
+
 ## Project Description: 
-Pixel Runner is a 2D side-scrolling platformer. Your objective is to control a pixelated character and avoid enemies like snails and flies. The longer you live, the better your score. 
-***
+Welcome to skiptracing: a 2D side-scrolling platformer. Your primary objective is to control a pixelated character, Skippy, and avoid enemies like snails and flies! Gross! The longer you live, the better your score. Can you take Skippy to his greatest heights? 
+
 ## GUI Design 
 
 ### Initial Design  
