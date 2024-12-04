@@ -6,6 +6,7 @@ from src.obstacle import Obstacle
 from src.game import display_score, collision_sprite 
 
 def main():
+    # Initializations 
     pygame.init()
     screen = pygame.display.set_mode((800, 400))
     pygame.display.set_caption('Runner')
@@ -21,8 +22,6 @@ def main():
     player = pygame.sprite.GroupSingle()
     player.add(Player()) 
     obstacle_group = pygame.sprite.Group()
-    # #obstacle_group.update()
-
 
     # Surfaces 
     sky_surface = pygame.image.load('assets/sky.png').convert()
@@ -32,10 +31,8 @@ def main():
     player_stand = pygame.image.load('assets/Player/player_stand.png').convert_alpha()
     player_stand = pygame.transform.rotozoom(player_stand, 0, 2)
     player_stand_rect = player_stand.get_rect(center = (400, 200))
-
     game_name = test_font.render('Pixel Runnner', False, (111, 196, 169))
     game_name_rect = game_name.get_rect(center = (400, 80))
-
     game_message = test_font.render('Press space to run', False, (111, 196, 169))
     game_message_rect = game_message.get_rect(center = (400, 340))
 
@@ -43,19 +40,8 @@ def main():
     obstacle_timer = pygame.USEREVENT + 1 
     pygame.time.set_timer(obstacle_timer, 1500)
 
-    # snail_animation_timer = pygame.USEREVENT + 2 
-    # pygame.time.set_timer(snail_animation_timer, 500)
-
-    # fly_animation_timer = pygame.USEREVENT + 3 
-    # pygame.time.set_timer(fly_animation_timer, 200)
-
-
+    # Game Loop 
     while True: 
-        # Entire game runs 
-        # Draw all elements 
-        # update everything 
-        # Event Loop (look at all player input)
-        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -74,7 +60,7 @@ def main():
                 
         if game_active == True: 
             # Draw Background 
-            screen.blit(sky_surface, (0,0)) # Blot image transfer 
+            screen.blit(sky_surface, (0,0))
             screen.blit(ground_surface, (0,300))
             score = display_score(start_time, test_font, screen)
             player.draw(screen)
@@ -83,22 +69,20 @@ def main():
             obstacle_group.update()
             game_active = collision_sprite(player, obstacle_group)
             
-        # End Screen 
+        # End Screen (game_active == False)
         else: 
             screen.fill((94,129,162))
             screen.blit(player_stand, player_stand_rect)
-            
             score_message = test_font.render(f"Your score: {score}", False, (111, 196, 169))
             score_message_rect = score_message.get_rect(center = (400, 330))
             screen.blit(game_name, game_name_rect)
-        
             if score == 0: 
                 screen.blit(game_message, game_message_rect) 
             else:
                 screen.blit(score_message, score_message_rect)
         
         pygame.display.update()
-        clock.tick(60) # while True loop <60fps
+        clock.tick(60) # 60fps 
         
 if __name__=="__main__":
     main()

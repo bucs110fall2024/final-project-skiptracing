@@ -1,8 +1,18 @@
-## Team Members: Individual 
+## Team Members: 
+Sofie Caballes 
 
-## Project Description: Running scroller 
+## Project Description: 
+Pixel Runner is a 2D side-scrolling platformer. Your objective is to control a pixelated character and avoid enemies like snails and flies. The longer you live, the better your score. 
 
-## Program Design: 
+## GUI Design - Initial Design:
+See assets/gui.jpg 
+
+## Program Design - Features 
+1. Start Menu
+2. Animated characters
+3. Obstacle collisions 
+4. Game over screen 
+5. Music 
 
 ### Classes
 
