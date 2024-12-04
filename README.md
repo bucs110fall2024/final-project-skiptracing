@@ -117,4 +117,4 @@ The game over screen displays correctly with the final score and restart option.
 
 
 | Step | Description | Results | 
-| --- | --- | --- | 
+| 1. Obstacles: Verify obstacle generation and movement. | Start. the game. Verify that obstacles (flies and snails) are generated at random intervals. Verify that obstacles move from right to left across screen. Verify that obstacles are removed when they move off-screen.  | Obstacles are generated, move correctly, and are removed when off-screen. | 
