@@ -36,7 +36,8 @@ Methods:
 - `animation_state(self)`: Updates the player's animation state based on whether the player is walking or jumping. 
 - `update(self)`: Updates the player's state every frame, including handling input, applying gravity, and updating animation. 
 
-#### Obstacle Class 
+```markdown 
+> Obstacle Class 
 Attributes: 
 - `frames`: List of images used for obstacle's animation.
 - `animation_index`: Index to track the current frame in the animation. 
