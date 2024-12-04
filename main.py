@@ -16,9 +16,12 @@ test_font = pygame.font.Font('assets/Font/Pixeltype.ttf', 50)
 sky_surface = pygame.image.load('assets/sky.png').convert()
 ground_surface = pygame.image.load('assets/ground.png').convert()
 text_surface = test_font.render('My game', False, 'Black').convert()
+
 snail_surface = pygame.image.load('assets/Snail/snail1.png').convert_alpha()
-snail_x_pos = 600 
-player_surface = pygame.image.load('assets/Player/player_walk_1.png')
+snail_rect = snail_surface.get_rect(midbottom = (700, 300))
+
+player_surface = pygame.image.load('assets/Player/player_walk_1.png').convert_alpha()
+player_rect = player_surface.get_rect(midbottom = (80, 300)) # like a surface, but makes placing much easier can be mid or topo left etc. 
 
 while True: 
     # Entire game runs 
@@ -34,10 +37,13 @@ while True:
     screen.blit(sky_surface, (0,0)) # Blot image transfer 
     screen.blit(ground_surface, (0,300))
     screen.blit(text_surface, (300,50))
-    snail_x_pos -= 4 # move snail 
-    if snail_x_pos <= -100: 
-        snail_x_pos = 800 # reset snail to right 
-    screen.blit(snail_surface, (snail_x_pos, 250))
+
+    snail_rect.x -= 4 
+    if snail_rect.right <= 0: 
+        snail_rect.left = 800 
+    screen.blit(snail_surface, snail_rect)
+    player_rect.left += 1 # dont move surf, move rect that contains surf
+    screen.blit(player_surface, player_rect) # placing at rect 
     
     pygame.display.update()
     clock.tick(60) # while True loop <60fps
