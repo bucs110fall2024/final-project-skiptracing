@@ -34,6 +34,14 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit() 
+            
+    # check if any button was pressed, work with a specific key 
+    if event.type == pygame.KEYDOWN: 
+        if event.key == pygame.K_SPACE: 
+            print('jump ')
+        
+    if event.type == pygame.KEYUP:
+        print('keyup')
 
     screen.blit(sky_surface, (0,0)) # Blot image transfer 
     screen.blit(ground_surface, (0,300))
@@ -41,13 +49,15 @@ while True:
     pygame.draw.rect(screen, 'Pink', text_rect, 10) # draw rectangle shape 
     screen.blit(text_surface, text_rect)
 
-    snail_rect.x -= 4 
+    # Snail Movement 
+    snail_rect.x -= 4 # move surf that contains rect 
     if snail_rect.right <= 0: 
         snail_rect.left = 800 
     screen.blit(snail_surface, snail_rect)
-    
-    #player_rect.left += 1 # dont move surf, move rect that contains surf
+
+    # Player Movement 
     screen.blit(player_surface, player_rect) # placing at rect 
+
     
     pygame.display.update()
     clock.tick(60) # while True loop <60fps
