@@ -7,7 +7,7 @@ from src.game import display_score, collision_sprite
 
 def main():
     """
-    Main function to run game. 
+    Central  function to run game. 
     Initializes game, sets up game window, loads assets, 
     contains main event handler game loop, updates game state, 
     renders game screen. 
@@ -51,6 +51,7 @@ def main():
 
     # Game Loop 
     while True: 
+    # Handle events 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
