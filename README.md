@@ -50,38 +50,11 @@ See assets/gui.jpg
 
 ## ATP 
 
-<!-- 5. Score Display 
-description: 
-verify score calculation and display. 
-
-steps: 
-1. start the game 
-2. verify the score is calculate based on elapsed time since the game started. 
-3. verify the score is displayed at the top center of the screen during gameplay. 
-
-expected outcome: 
-the score is calculated and displayed correctly.  -->
-
-<!-- 6. Game Over Screen 
-description: 
-verify the game over screen display. 
-
-steps: 
-1. Start the game. 
-2. Play until the player collides with an obstacle. 
-3. Verify the game over screen displays the player's final score. 
-4. Verify the game over message is shown with the option to restart the game by pressing the space key. 
-
-expected outcome: 
-The game over screen displays correctly with the final score and restart option. ('Press space') -->
-
-
-
 | Step | Description | Results | 
 | --- | --- | --- | 
 | 1. **Obstacles**: Verify obstacle generation and movement. | Start. the game. Verify that obstacles (flies and snails) are generated at random intervals. Verify that obstacles move from right to left across screen. Verify that obstacles are removed when they move off-screen.  | Obstacles are generated, move correctly, and are removed when off-screen. | 
 | 2. **Player Movement**: Verify the player's jump works as expected. | Start the game. Press space to make the player jump. Verify the player jumps. Let the player fall. Verify the player falls due to gravity. | The player responds to gravity and jumps correctly when the space key is pressed. | 
 | 3. **Collision Detection**: Verify collision detection between the player and obstacles. | Start the game. Allow the player to collide with an obstacle. Verify the game ends upon collision. |Collisions are detected correctly, ending the game.  | 
-| 4. **Score Display**: Verify score calculation and display. |Start the game. Verify the score is calculated based on elapsed time since the game started. Verify the score is displayed at the top center of the screen during gameplay. | the score is calculated and displayed correctly. | 
+| 4. **Score Display**: Verify score calculation and display. |Start the game. Verify the score is calculated based on elapsed time since the game started. Verify the score is displayed at the top center of the screen during gameplay. | The score is calculated and displayed correctly. | 
 | 5. **Game Over Screen**: verify the game over screen display.  | Start the game. Play until the player collides with an obstacle. Verify the game over screen displays the player's final score. Verify the game over message is shown with the option to restart the game by pressing the space key. |The game over screen displays correctly with the final score and restart option. ('Press space') | 
 
