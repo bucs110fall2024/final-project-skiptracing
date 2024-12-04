@@ -26,9 +26,10 @@ class CoffeeGame:
         self.current_order = None
         self.orders_completed = 0
         self.hearts = 3
+        self.ingredients = ""
 
-    def check_order(self, ingredients):
-        if self.current_order.order == ingredients:
+    def check_order(self):
+        if self.current_order.order == self.ingredients:
             self.orders_completed += 1
             self.customers.remove(self.current_order)
             self.current_order = None
@@ -57,11 +58,11 @@ class CoffeeGame:
                         ingredients = "coffee_milk"
                     elif self.sugar_button.click(event):
                         ingredients = "coffee_sugar"
-                    else:
-                        ingredients = "coffee_milk_sugar"
+
                     
                     if self.current_order:
                         self.check_order(ingredients)
+                        self.ingredients = ""
 
             if not self.current_order and self.customers:
                 self.current_order = random.choice(self.customers)
