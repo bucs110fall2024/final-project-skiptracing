@@ -46,5 +46,4 @@ Methods:
 - `update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
 - `destroy(self)`: Destroys the obstacle if it moves off-screen. 
 
-```markdown 
 > This is a blockquote. 
