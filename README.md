@@ -1,6 +1,6 @@
 ## Team Members: Individual 
 
-## Project Description: Coffee brewing simulator! 
+## Project Description: Running scroller 
 
 ## Program Design: 
 
