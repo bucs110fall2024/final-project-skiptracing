@@ -9,7 +9,9 @@ Pixel Runner is a 2D side-scrolling platformer. Your objective is to control a p
 ## GUI Design - Initial Design:
 See assets/gui.jpg 
 
-## Program Design - Features 
+## Program Design
+
+### Features 
 1. Start Menu
 2. Animated characters
 3. Obstacle collisions 
