@@ -16,8 +16,8 @@ See assets/gui.jpg
 4. Game over screen 
 5. Music 
 
-## Classes: 
-### Player Class 
+### Classes: 
+#### Player Class 
 Attributes: 
 - `player_walk`: List of images used for players walking animation 
 - `player_index`: Index to track current frame in the walking animation. 
@@ -33,7 +33,7 @@ Methods:
 - `animation_state(self)`: Updates the player's animation state based on whether the player is walking or jumping. 
 - `update(self)`: Updates the player's state every frame, including handling input, applying gravity, and updating animation. 
 
-### Obstacle Class 
+#### Obstacle Class 
 Attributes: 
 - `frames`: List of images used for obstacle's animation.
 - `animation_index`: Index to track the current frame in the animation. 
@@ -45,3 +45,6 @@ Methods:
 - `animation_state(self)`: Updates the obstacle's animation state by cycling through frames. 
 - `update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
 - `destroy(self)`: Destroys the obstacle if it moves off-screen. 
+
+```markdown 
+> This is a blockquote. 
