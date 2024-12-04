@@ -17,7 +17,10 @@ See assets/gui.jpg
 5. Music 
 
 ### Classes: 
-#### Player Class 
+
+```markdown 
+> Player Class 
+
 Attributes: 
 - `player_walk`: List of images used for players walking animation 
 - `player_index`: Index to track current frame in the walking animation. 
@@ -45,5 +48,3 @@ Methods:
 - `animation_state(self)`: Updates the obstacle's animation state by cycling through frames. 
 - `update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
 - `destroy(self)`: Destroys the obstacle if it moves off-screen. 
-
-> This is a blockquote. 
