@@ -1,3 +1,5 @@
+# Pixel Runners! A Title that I'm proably gonna change. 
+
 ## Team Members: 
 Sofie Caballes 
 
@@ -15,39 +17,31 @@ See assets/gui.jpg
 5. Music 
 
 ### Classes
+### Player Class 
+Attributes: 
+`player_walk`: List of images used for players walking animation 
+player_index: Index to track current frame in the walking animation. 
+player_jump: Image used for the player's jumping animation. 
+image: Current image of player to be displayed. 
+rect: Rect object defining the player's position and size. 
+gravity: Value to simulate gravity's effect on the player. 
 
-#### Player
-- **Attributes**:
-  - `name` (str): Player's name
-  - `x` (int): x-coordinate of the player's position
-  - `y` (int): y-coordinate of the player's position
-  - `img` (pygame.Surface): Image of the player
-  
-- **Methods**:
-  - `__init__(self, name, x, y, img_file)`: Initializes the player object
-  - `move_right(self)`: Moves player right by 1
-  - `move_left(self)`: Moves player left by 1
-  - `move_up(self)`: Moves player up by 1
-  - `move_down(self)`: Moves player down by 1
-  - `draw(self, screen)`: Draws the player on the screen
+Methods: 
+__init__(self): Initializes the player object. 
+player_input(self): Handles player input for controlling the player. 
+apply_gravity(self): Applies gravity to player, causing player to fall downward. 
+animation_state(self): Updates the player's animation state based on whether the player is walking or jumping. 
+update(self): Updates the player's state every frame, including handling input, applying gravity, and updating animation. 
 
-#### CoffeeOrder
-- **Attributes**:
-  - `customer_name` (str): Name of the customer
-  - `coffee_type` (str): Type of coffee
-  - `size` (str): Size of the coffee (small, medium, large)
-  - `img` (pygame.Surface): Image of the coffee order
+### Obstacle Class 
+Attributes: 
+frames: List of images used for obstacle's animation.
+animation_index: Index to track the current frame in the animation. 
+image: Current image of the obstacle to be displayed. 
+rect: Rect object defining the obstacle's position and size. 
 
-- **Methods**:
-  - `__init__(self, customer_name, coffee_type, size, img_file)`: Initializes the coffee order object
-  - `prepare(self)`: Prepares the coffee order
-  - `serve(self)`: Serves the coffee order to the customer
-  - `draw(self, screen)`: Draws the coffee order on the screen
-  
-<!-- 
-start menu
-buttons 
-characters 
-scrolling background
-game over screen  -->
-
+Methods: 
+__init__(self, type): Initialies the obstacle object, loading images based on the obstacle type (fly or snail). 
+animation_state(self): Updates the obstacle's animation state by cycling through frames. 
+update(self): Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
+destroy(self): Destroys the obstacle if it moves off-screen. 
