@@ -6,6 +6,15 @@ from src.obstacle import Obstacle
 from src.game import display_score, collision_sprite 
 
 def main():
+    """
+    Main function to run game. 
+    Initializes game, sets up game window, loads assets, 
+    contains main event handler game loop, updates game state, 
+    renders game screen. 
+    
+    Includes logic for starting game, updating player and obstacle sprites, 
+    and checking for collisions. 
+    """
     # Initializations 
     pygame.init()
     screen = pygame.display.set_mode((800, 400))
