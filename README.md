@@ -63,7 +63,7 @@ steps:
 expected outcome: 
 obstacles are generated, move correctly, and are removed when off-screen. 
 
-<!-- 2. Player Movement 
+2. Player Movement 
 
 description: 
 verify the player's jump works as expected. 
@@ -76,7 +76,7 @@ steps:
 5. verify the player falls due to gravity. 
 
 expected outcome: 
-the player responds to gravity and jumps correctly when the space key is pressed.  -->
+the player responds to gravity and jumps correctly when the space key is pressed. 
 
 <!-- 4. Collision Detection 
 description: 
@@ -118,4 +118,5 @@ The game over screen displays correctly with the final score and restart option.
 
 | Step | Description | Results | 
 | --- | --- | --- | 
-| 1. Obstacles: Verify obstacle generation and movement. | Start. the game. Verify that obstacles (flies and snails) are generated at random intervals. Verify that obstacles move from right to left across screen. Verify that obstacles are removed when they move off-screen.  | Obstacles are generated, move correctly, and are removed when off-screen. | 
+| 1. **Obstacles**: Verify obstacle generation and movement. | Start. the game. Verify that obstacles (flies and snails) are generated at random intervals. Verify that obstacles move from right to left across screen. Verify that obstacles are removed when they move off-screen.  | Obstacles are generated, move correctly, and are removed when off-screen. | 
+| 2. **Player Movement**: Verify the player's jump works as expected. | Start the game. Press space to make the player jump. Verify the player jumps. Let the player fall. Verify the player falls due to gravity. | The player responds to gravity and jumps correctly when the space key is pressed. | 
