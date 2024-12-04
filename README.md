@@ -19,7 +19,6 @@ See assets/gui.jpg
 5. Music 
 
 ### Classes: 
-
 #### Player Class 
 *Attributes*: 
 - `player_walk`: List of images used for players walking animation 
@@ -48,3 +47,69 @@ See assets/gui.jpg
 - `animation_state(self)`: Updates the obstacle's animation state by cycling through frames. 
 - `update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
 - `destroy(self)`: Destroys the obstacle if it moves off-screen. 
+
+## ATP 
+
+1. Obstacles 
+description: 
+verify obstacle generation and movement 
+
+steps: 
+1. start the game 
+2. verify that obstacles (flies and snails) are generated at random intervals. 
+3. verify that obstacles move from right to left across screen. 
+4. verify that obstacles are removed when they move off-screen. 
+
+expected outcome: 
+obstacles are generated, move correctly, and are removed when off-screen. 
+
+<!-- 2. Player Movement 
+
+description: 
+verify the player's jump works as expected. 
+
+steps: 
+1. start the game 
+2. press space to make the player jump 
+3. verify the player jumps. 
+4. let the player fall. 
+5. verify the player falls due to gravity. 
+
+expected outcome: 
+the player responds to gravity and jumps correctly when the space key is pressed.  -->
+
+<!-- 4. Collision Detection 
+description: 
+verify collision detection between the player and obstacles. 
+
+steps: 
+1. start the game. 
+2. allow the player to collide with an obstacle. 
+3. verify the game ends upon collision. 
+
+expected outcome: collisions are detected correctly, ending the game.  -->
+
+<!-- 5. Score Display 
+description: 
+verify score calculation and display. 
+
+steps: 
+1. start the game 
+2. verify the score is calculate based on elapsed time since the game started. 
+3. verify the score is displayed at the top center of the screen during gameplay. 
+
+expected outcome: 
+the score is calculated and displayed correctly.  -->
+
+<!-- 6. Game Over Screen 
+description: 
+verify the game over screen display. 
+
+steps: 
+1. Start the game. 
+2. Play until the player collides with an obstacle. 
+3. Verify the game over screen displays the player's final score. 
+4. Verify the game over message is shown with the option to restart the game by pressing the space key. 
+
+expected outcome: 
+The game over screen displays correctly with the final score and restart option. ('Press space') -->
