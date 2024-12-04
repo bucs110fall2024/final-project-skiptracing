@@ -113,3 +113,8 @@ steps:
 
 expected outcome: 
 The game over screen displays correctly with the final score and restart option. ('Press space') -->
+
+
+
+| Step | Description | Results | 
+| --- | --- | --- | 
