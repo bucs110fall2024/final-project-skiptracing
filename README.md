@@ -14,7 +14,7 @@ Welcome to skiptracing: a 2D side-scrolling platformer. Your primary objective i
 ![initial gui](assets/gui.jpg) 
 
 ### Final Design 
-![final gui](assets/finalgui.jpg) # erm 
+![final gui](assets/finalgui.jpg) 
 
 ## Program Design
 
