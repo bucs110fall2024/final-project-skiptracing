@@ -18,8 +18,8 @@ def main():
     # Initializations 
     pygame.init()
     screen = pygame.display.set_mode((800, 400))
-    pygame.display.set_caption('Runner')
-    icon = pygame.image.load('assets/run.png')
+    pygame.display.set_caption('Pixel Runner')
+    icon = pygame.image.load('assets/Player/player_stand.png')
     pygame.display.set_icon(icon)
     clock = pygame.time.Clock() # Clock object for FPS
     test_font = pygame.font.Font('assets/Font/Pixeltype.ttf', 50) 
@@ -33,8 +33,8 @@ def main():
     obstacle_group = pygame.sprite.Group()
 
     # Surfaces 
-    sky_surface = pygame.image.load('assets/sky.png').convert()
-    ground_surface = pygame.image.load('assets/ground.png').convert()
+    sky_surface = pygame.image.load('assets/Backgrounds/sky.png').convert()
+    ground_surface = pygame.image.load('assets/Backgrounds/ground.png').convert()
 
     # Intro Screen 
     player_stand = pygame.image.load('assets/Player/player_stand.png').convert_alpha()
