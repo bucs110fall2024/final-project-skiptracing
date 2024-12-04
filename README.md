@@ -1,13 +1,20 @@
-# Pixel Runners! A Title that I'm proably gonna change. 
+# Pixel Runners
+
+## CS110 Final Project Fall 2024 
 
 ## Team Members: 
 Sofie Caballes 
-
+***
 ## Project Description: 
 Pixel Runner is a 2D side-scrolling platformer. Your objective is to control a pixelated character and avoid enemies like snails and flies. The longer you live, the better your score. 
+***
+## GUI Design 
 
-## GUI Design - Initial Design:
-See assets/gui.jpg 
+### Initial Design  
+![initial gui](assets/gui.jpg) 
+
+### Final Design 
+![final gui](assets/finalgui.jpg) # erm 
 
 ## Program Design
 
@@ -16,7 +23,7 @@ See assets/gui.jpg
 2. Animated characters
 3. Obstacle collisions 
 4. Game over screen 
-5. Music 
+5. Score  
 
 ### Classes: 
 #### Player Class 
