@@ -1,4 +1,9 @@
-from src.controller import main 
+import pygame 
+from src.controller import Controller
 
-if __name__ == "__main__":
+def main():
+    controller = Controller()
+    controller.gameLoop()
+
+if __name__ == '__main__':
     main()
