@@ -1,0 +1,67 @@
+# Skiptracing
+
+## CS110 Final Project Fall 2024 
+
+## Team Members: 
+Sofie Caballes 
+
+## Project Description: 
+Welcome to skiptracing: a 2D side-scrolling platformer. Your primary objective is to control a pixelated character, Skippy, and avoid enemies like snails and flies! Gross! The longer you live, the better your score. Can you take Skippy to his greatest heights? 
+
+## GUI Design 
+
+### Initial Design  
+![initial gui](assets/gui.jpg) 
+
+### Final Design 
+![final gui](assets/finalgui.jpg) 
+
+## Program Design
+
+### Features 
+1. Start Menu
+2. Animated characters
+3. Obstacle collisions 
+4. Game over screen 
+5. Score  
+
+### Classes: 
+#### Player Class 
+*Attributes*: 
+- `player_walk`: List of images used for players walking animation 
+- `player_index`: Index to track current frame in the walking animation. 
+- `player_jump`: Image used for the player's jumping animation. 
+- `image`: Current image of player to be displayed. 
+- `rect`: Rect object defining the player's position and size. 
+- `gravity`: Value to simulate gravity's effect on the player. 
+
+*Methods*: 
+- `__init__(self)`: Initializes the player object. 
+- `player_input(self)`: Handles player input for controlling the player. 
+- `apply_gravity(self)`: Applies gravity to player, causing player to fall downward. 
+- `animation_state(self)`: Updates the player's animation state based on whether the player is walking or jumping. 
+- `update(self)`: Updates the player's state every frame, including handling input, applying gravity, and updating animation. 
+
+#### Obstacle Class 
+*Attributes*: 
+- `frames`: List of images used for obstacle's animation.
+- `animation_index`: Index to track the current frame in the animation. 
+- `image`: Current image of the obstacle to be displayed. 
+- `rect`: Rect object defining the obstacle's position and size. 
+
+*Methods*: 
+- `__init__(self, type)`: Initialies the obstacle object, loading images based on the obstacle type (fly or snail). 
+- `animation_state(self)`: Updates the obstacle's animation state by cycling through frames. 
+- `update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
+- `destroy(self)`: Destroys the obstacle if it moves off-screen. 
+
+## ATP 
+
+| Step | Description | Results | 
+| --- | --- | --- | 
+| 1. **Obstacles**: Verify obstacle generation and movement. | Start the game. Verify that obstacles (flies and snails) are generated at random intervals. Verify that obstacles move from right to left across screen. Verify that obstacles are removed when they move off-screen.  | Obstacles are generated, move correctly, and are removed when off-screen. | 
+| 2. **Player Movement**: Verify the player's jump works as expected. | Start the game. Press space to make the player jump. Verify the player jumps. Let the player fall. Verify the player falls due to gravity. | The player responds to gravity and jumps correctly when the space key is pressed. | 
+| 3. **Collision Detection**: Verify collision detection between the player and obstacles. | Start the game. Allow the player to collide with an obstacle. Verify the game ends upon collision. |Collisions are detected correctly, ending the game.  | 
+| 4. **Score Display**: Verify score calculation and display. |Start the game. Verify the score is calculated based on elapsed time since the game started. Verify the score is displayed at the top center of the screen during gameplay. | The score is calculated and displayed correctly. | 
+| 5. **Game Over Screen**: Verify the game over screen display.  | Start the game. Play until the player collides with an obstacle. Verify the game over screen displays the player's final score. Verify the game over message is shown with the option to restart the game by pressing the space key. |The game over screen displays correctly with the final score. | 
+
