@@ -5,7 +5,11 @@ from src.obstacle import Obstacle
 from src.high_score import HighScore 
 
 class Controller():
-    def __init__(self): 
+    def __init__(self):
+        """
+        Initializes the game by setting up the display, 
+        loading assets, and creating game objects. 
+        """ 
         # Initializations 
         pygame.init()
         self.screen = pygame.display.set_mode((800, 400))
@@ -47,11 +51,6 @@ class Controller():
         Displays the current score onscreen. 
         Calculates score based on time elapsed. 
 
-        Args:
-            start_time (int): The starting time of the game in milliseconds. 
-            font (pygame.font.Font): The font used to create the score text. 
-            screen (pygame.Surface): The game screen surface where the score will be displayed. 
-
         Returns:
             int: The current score based on the elapsed time. 
         """
@@ -62,6 +61,12 @@ class Controller():
         return current_time 
 
     def collision_sprite(self):
+        """
+        Checks for collisions between the player and obstacles. 
+
+        Returns:
+            bool: False if a collision is detected, True otherwise. 
+        """
         if pygame.sprite.spritecollide(self.player.sprite, self.obstacle_group, False):
             self.obstacle_group.empty()
             return False 
@@ -71,7 +76,8 @@ class Controller():
 
     def gameLoop(self):
         """
-        Main game loop. 
+        Main game loop. Handles events, updates game state, 
+        Renders the game screen. 
         """
         while True: 
             for event in pygame.event.get():
