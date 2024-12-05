@@ -95,7 +95,7 @@ def main():
             if score == 0: 
                 screen.blit(game_message, game_message_rect) 
             else:
-                # save the score 
+                # save the score?
                 if score > 0:
                     insert_score(conn, score)
                 
