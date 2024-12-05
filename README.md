@@ -23,7 +23,7 @@ Welcome to skiptracing: a 2D side-scrolling platformer. Your primary objective i
 2. Animated characters
 3. Obstacle collisions 
 4. Game over screen 
-5. Score  
+5. High Score Rankings   
 
 ### Classes: 
 #### Player Class 
