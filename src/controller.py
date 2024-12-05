@@ -60,7 +60,7 @@ def main():
             if game_active == True: 
                 # Click to jump 
                 if event.type == obstacle_timer: 
-                    obstacle_group.add(Obstacle(choice(['fly', 'snail', 'snail', 'snail'])))
+                    obstacle_group.add(Obstacle(choice(['fly', 'snail', 'snail'])))
             else: 
                 # check if any button was pressed, work with a specific key 
                 # Space to jump 
