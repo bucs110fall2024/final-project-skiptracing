@@ -23,12 +23,10 @@ class Controller():
         self.score = 0
         self.high_score_manager = HighScore()
 
-        # Groups 
+        # Groups and Surfaces 
         self.player = pygame.sprite.GroupSingle()
         self.player.add(Player()) 
         self.obstacle_group = pygame.sprite.Group()
-
-        # Surfaces 
         self.sky_surface = pygame.image.load('assets/Backgrounds/sky.png').convert()
         self.ground_surface = pygame.image.load('assets/Backgrounds/ground.png').convert()
 
@@ -45,7 +43,19 @@ class Controller():
         self.obstacle_timer = pygame.USEREVENT + 1 
         pygame.time.set_timer(self.obstacle_timer, 1500)
 
-    
+    def collision_sprite(self):
+        """
+        Checks for collisions between the player and obstacles. 
+
+        Returns:
+            bool: False if a collision is detected, True otherwise. 
+        """
+        if pygame.sprite.spritecollide(self.player.sprite, self.obstacle_group, False):
+            self.obstacle_group.empty()
+            return False 
+        else: 
+            return True 
+        
     def display_score(self):
         """
         Displays the current score onscreen. 
@@ -59,19 +69,6 @@ class Controller():
         score_rect = score_surface.get_rect(center = (400, 50))
         self.screen.blit(score_surface, score_rect)
         return current_time 
-
-    def collision_sprite(self):
-        """
-        Checks for collisions between the player and obstacles. 
-
-        Returns:
-            bool: False if a collision is detected, True otherwise. 
-        """
-        if pygame.sprite.spritecollide(self.player.sprite, self.obstacle_group, False):
-            self.obstacle_group.empty()
-            return False 
-        else: 
-            return True 
 
 
     def gameLoop(self):
