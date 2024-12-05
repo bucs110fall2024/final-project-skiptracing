@@ -1,5 +1,10 @@
 import pygame 
 
+# This is literally just practice because pygame has me tripping 
+
+
+
+
 # Initialize pygame 
 pygame.init()
 
