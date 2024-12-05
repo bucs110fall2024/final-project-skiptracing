@@ -41,7 +41,7 @@ class Controller():
         self.game_message = self.test_font.render('Press space to run', False, (111, 196, 169))
         self.game_message_rect = self.game_message.get_rect(center = (400, 340))
 
-        # Timer 
+        # Obstacle Timer 
         self.obstacle_timer = pygame.USEREVENT + 1 
         pygame.time.set_timer(self.obstacle_timer, 1500)
 
@@ -81,10 +81,12 @@ class Controller():
         """
         while True: 
             for event in pygame.event.get():
+                # Quit 
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     exit() 
                     
+                # Spawn obstacles, start game on space key if inactive 
                 if self.game_active == True: 
                     if event.type == self.obstacle_timer: 
                         self.obstacle_group.add(Obstacle(choice(['fly', 'snail', 'snail'])))
@@ -112,14 +114,15 @@ class Controller():
                 score_message_rect = score_message.get_rect(center = (400, 330))
                 self.screen.blit(self.game_name, self.game_name_rect)
                 
+                # Scoring 
                 if self.score == 0: 
                     self.screen.blit(self.game_message, self.game_message_rect) 
                 else:
-                    # save the score?
+                    # Save score 
                     if self.score > 0:
                         self.high_score_manager.insert_score(self.score)
                     
-                        # display high scores 
+                        # Display high scores 
                         self.screen.blit(score_message, score_message_rect)
                         high_scores = self.high_score_manager.get_high_scores()
                         y_offset = 150
@@ -129,14 +132,14 @@ class Controller():
                             self.screen.blit(score_text, score_rect)
                             y_offset += 45
                         
-                        # display retry message 
+                        # Display retry message 
                         retry_message = self.test_font.render("Press space!", False, (111, 186, 160))
                         retry_message_rect = retry_message.get_rect(center = (150, 200))
                         self.screen.blit(retry_message, retry_message_rect)
         
             pygame.display.update()
-            self.clock.tick(60) # 60fps 
+            self.clock.tick(60)
             
 if __name__ == "__main__": 
     controller = Controller()
-    controller.game_loop()
+    controller.gameLoop()
