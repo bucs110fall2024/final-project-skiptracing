@@ -50,10 +50,21 @@ Welcome to skiptracing: a 2D side-scrolling platformer. Your primary objective i
 - `rect`: Rect object defining the obstacle's position and size. 
 
 *Methods*: 
-- `__init__(self, type)`: Initialies the obstacle object, loading images based on the obstacle type (fly or snail). 
+- `__init__(self, type)`: Initializes the obstacle object, loading images based on the obstacle type (fly or snail). 
 - `animation_state(self)`: Updates the obstacle's animation state by cycling through frames. 
 - `update(self)`: Updates the obstacle's state each frame, including moving and possibly destroying obstacle. 
 - `destroy(self)`: Destroys the obstacle if it moves off-screen. 
+
+#### High Score Class 
+*Attributes*: 
+- `conn`: Connection object to the SQL database. 
+
+*Methods*: 
+- `__init__(self, db_name='high_scores.db)`: Initializes the HighScore class with a connection to the database and creates the scores table.
+- `create_connection(self, db_name)`: Creates a connection to the SQLite database. 
+- `create_table(self)`: Creates the scores table in the SQLite database. 
+- `insert_score(self, score)`: Inserts a new score into the datbase.
+- `get_high_scores(self, limit=3)`: Retrieves the top high scores from the database. 
 
 ## ATP 
 

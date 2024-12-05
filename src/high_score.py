@@ -6,7 +6,7 @@ class HighScore:
     def __init__(self, db_name='high_scores.db'):
         """
         Initializes HighScore class with a connection to the database 
-        Creates the scores table if it does not exist. 
+        Creates the scores table.
         
         Args: 
             db_name(str): The name of the database file. Defaults to 'high_scores.db'
@@ -29,7 +29,7 @@ class HighScore:
 
     def create_table(self):
         """
-        Creates the scores table in the SQLite database if it does not exist
+        Creates the scores table in the SQLite database. 
         """
         sql = '''CREATE TABLE IF NOT EXISTS scores (
                     id INTEGER PRIMARY KEY AUTOINCREMENT, 
@@ -43,7 +43,7 @@ class HighScore:
             
     def insert_score(self, score): 
         """
-        Inserts a new score into the database if it does not already exist. 
+        Inserts a new score into the database.
 
         Args:
             score (int): The score to be inserted. 
