@@ -1,6 +1,4 @@
 import pygame 
-import sqlite3
-import sys 
 from random import choice 
 from src.player import Player 
 from src.obstacle import Obstacle 
