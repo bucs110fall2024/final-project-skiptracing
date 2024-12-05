@@ -4,6 +4,7 @@ from random import choice
 from src.player import Player 
 from src.obstacle import Obstacle 
 from src.game import display_score, collision_sprite 
+from src.high_score import create_connection, create_table, insert_score, get_high_scores
 
 def main():
     """
@@ -26,6 +27,8 @@ def main():
     game_active = False 
     start_time = 0 
     score = 0
+    conn = create_connection()
+    create_table(conn) # initialize hi score table 
 
     # Groups 
     player = pygame.sprite.GroupSingle()
@@ -66,7 +69,10 @@ def main():
                 # Space to jump 
                 if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE: 
                     game_active = True
-                start_time = int(pygame.time.get_ticks()/1000)
+                    start_time = int(pygame.time.get_ticks()/1000)
+                    
+                    # Retrieve high scores 
+                    high_scores = get_high_scores(conn)
                 
         if game_active == True: 
             # Draw Background 
@@ -79,7 +85,7 @@ def main():
             obstacle_group.update()
             game_active = collision_sprite(player, obstacle_group)
             
-        # End Screen (game_active == False)
+        # End Screen
         else: 
             screen.fill((94,129,162))
             screen.blit(player_stand, player_stand_rect)
@@ -89,7 +95,19 @@ def main():
             if score == 0: 
                 screen.blit(game_message, game_message_rect) 
             else:
-                screen.blit(score_message, score_message_rect)
+                # save the score 
+                if score > 0:
+                    insert_score(conn, score)
+                
+                    # display high scores 
+                    screen.blit(score_message, score_message_rect)
+                    high_scores = get_high_scores(conn)
+                    y_offset = 150
+                    for idx, high_score in enumerate(high_scores):
+                        score_text = test_font.render(f"Rank {idx+1}: {high_score[0]}", False, (111, 196, 169))
+                        score_rect = score_text.get_rect(center = (700, y_offset))
+                        screen.blit(score_text, score_rect)
+                        y_offset += 45
         
         pygame.display.update()
         clock.tick(60) # 60fps 
