@@ -12,7 +12,7 @@ class Player(pygame.sprite.Sprite):
         player_walk_1 = pygame.image.load('assets/Player/player_walk_1.png').convert_alpha()
         player_walk_2 = pygame.image.load('assets/Player/player_walk_2.png').convert_alpha()
         self.player_walk = [player_walk_1, player_walk_2]
-        self.player_index = 0 # pick walk 1 or walk 2 
+        self.player_index = 0 # pick walk 1 or walk 2 !
         self.player_jump = pygame.image.load('assets/Player/jump.png').convert_alpha()
         self.image = self.player_walk[self.player_index]
         self.rect = self.image.get_rect(midbottom = (200, 300))
