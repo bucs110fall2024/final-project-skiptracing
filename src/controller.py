@@ -92,9 +92,9 @@ class Controller():
                     if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE: 
                         self.game_active = True
                         self.start_time = int(pygame.time.get_ticks()/1000)
-                    
+             
+            # Draw Background         
             if self.game_active == True: 
-                # Draw Background 
                 self.screen.blit(self.sky_surface, (0,0))
                 self.screen.blit(self.ground_surface, (0,300))
                 self.score = self.display_score()
@@ -111,6 +111,7 @@ class Controller():
                 score_message = self.test_font.render(f"Your score: {self.score}", False, (111, 196, 169))
                 score_message_rect = score_message.get_rect(center = (400, 330))
                 self.screen.blit(self.game_name, self.game_name_rect)
+                
                 if self.score == 0: 
                     self.screen.blit(self.game_message, self.game_message_rect) 
                 else:
@@ -127,6 +128,11 @@ class Controller():
                             score_rect = score_text.get_rect(center = (700, y_offset))
                             self.screen.blit(score_text, score_rect)
                             y_offset += 45
+                        
+                        # display retry message 
+                        retry_message = self.test_font.render("Press space!", False, (111, 186, 160))
+                        retry_message_rect = retry_message.get_rect(center = (150, 200))
+                        self.screen.blit(retry_message, retry_message_rect)
         
             pygame.display.update()
             self.clock.tick(60) # 60fps 
